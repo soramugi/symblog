@@ -7,22 +7,16 @@
 # All rights reserved - Do Not Redistribute
 #
 %w(httpd php).each do |pkg|
-  package pkg
+  package pkg do
+    action :install
+  end
 end
 
-file '/etc/httpd/conf/httpd.conf' do
-  _file = Chef::Util::FileEdit.new(path)
-  _file.search_file_replace('/var/www/html', "/vagrant/web")
-  content _file.send(:contents).join
-  only_if "grep 'DocumentRoot \"/var/www/html\"' /etc/httpd/conf/httpd.conf"
+template '/etc/httpd/conf/httpd.conf' do
   notifies :restart, "service[httpd]"
 end
 
-file '/etc/php.ini' do
-  _file = Chef::Util::FileEdit.new(path)
-  _file.search_file_replace(';date.timezone =', "date.timezone = Asia/Tokyo")
-  content _file.send(:contents).join
-  only_if "grep ';date.timezone' /etc/php.ini"
+template '/etc/php.ini' do
   notifies :restart, "service[httpd]"
 end
 
