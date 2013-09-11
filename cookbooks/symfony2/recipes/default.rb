@@ -6,10 +6,14 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-%w(apache php php-apache).each do |pkg|
+#DocumentRoot "/vagrant/web"
+%w(httpd php).each do |pkg|
   package pkg
 end
 
-service "apache" do
+service "httpd" do
   action [ :enable, :start ]
+end
+service "iptables" do
+  action [ :disable, :stop ]
 end
