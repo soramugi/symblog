@@ -6,10 +6,13 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-%w(httpd php).each do |pkg|
-  package pkg do
-    action :install
-  end
+%w(
+httpd
+php54 php54-devel php54-common php54-cli php54-pear php54-xml
+php54-mbstring php54-intl php54-posix php54-mysql
+php-pecl-apc
+).each do |pkg|
+  package pkg
 end
 
 template '/etc/httpd/conf/httpd.conf' do
@@ -21,7 +24,7 @@ template '/etc/php.ini' do
 end
 
 service "httpd" do
-  action [ :enable, :start ]
+  action [ :enable, :restart ]
 end
 service "iptables" do
   action [ :disable, :stop ]
