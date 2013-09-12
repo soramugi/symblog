@@ -1,12 +1,12 @@
 [submodule "site-cookbooks/yum"]
 	path = site-cookbooks/yum
-	url = git@github.com:opscode-cookbooks/yum.git
+	url = https://github.com/opscode-cookbooks/yum.git
 [submodule "site-cookbooks/mysql"]
 	path = site-cookbooks/mysql
-	url = git@github.com:opscode-cookbooks/mysql.git
+	url = https://github.com/opscode-cookbooks/mysql.git
 [submodule "site-cookbooks/build-essential"]
 	path = site-cookbooks/build-essential
-	url = git@github.com:opscode-cookbooks/build-essential.git
+	url = https://github.com/opscode-cookbooks/build-essential.git
 [submodule "site-cookbooks/openssl"]
 	path = site-cookbooks/openssl
-	url = git@github.com:opscode-cookbooks/openssl.git
+	url = https://github.com/opscode-cookbooks/openssl.git
