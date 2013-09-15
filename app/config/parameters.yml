@@ -1,6 +1,5 @@
-# This file is auto-generated during the composer install
 parameters:
-    database_driver: pdo_mysql
+    database_driver: pdo_sqlite
     database_host: 192.168.33.100
     database_port: null
     database_name: symfony
@@ -11,4 +10,5 @@ parameters:
     mailer_user: null
     mailer_password: null
     locale: jp
-    secret: ThisTokenIsNotSoSecretChangeIt
+    secret: b6a2b6ba55d58b70d0064ca12d5b41056
+    database_path: null
