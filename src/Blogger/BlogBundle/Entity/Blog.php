@@ -67,13 +67,13 @@ class Blog
      */
     public function setUpdatedValue()
     {
-       $this->setUpdated(new \DateTime());
+        $this->setUpdated(new \DateTime());
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -89,14 +89,14 @@ class Blog
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -112,14 +112,14 @@ class Blog
     public function setAuthor($author)
     {
         $this->author = $author;
-    
+
         return $this;
     }
 
     /**
      * Get author
      *
-     * @return string 
+     * @return string
      */
     public function getAuthor()
     {
@@ -135,18 +135,21 @@ class Blog
     public function setBlog($blog)
     {
         $this->blog = $blog;
-    
+
         return $this;
     }
 
     /**
      * Get blog
      *
-     * @return string 
+     * @return string
      */
-    public function getBlog()
+    public function getBlog($length = null)
     {
-        return $this->blog;
+        if (false === is_null($length) && $length > 0)
+            return substr($this->blog, 0, $length);
+        else
+            return $this->blog;
     }
 
     /**
@@ -158,14 +161,14 @@ class Blog
     public function setImage($image)
     {
         $this->image = $image;
-    
+
         return $this;
     }
 
     /**
      * Get image
      *
-     * @return string 
+     * @return string
      */
     public function getImage()
     {
@@ -181,14 +184,14 @@ class Blog
     public function setTags($tags)
     {
         $this->tags = $tags;
-    
+
         return $this;
     }
 
     /**
      * Get tags
      *
-     * @return string 
+     * @return string
      */
     public function getTags()
     {
@@ -204,14 +207,14 @@ class Blog
     public function setCreated($created)
     {
         $this->created = $created;
-    
+
         return $this;
     }
 
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -227,14 +230,14 @@ class Blog
     public function setUpdated($updated)
     {
         $this->updated = $updated;
-    
+
         return $this;
     }
 
     /**
      * Get updated
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdated()
     {
