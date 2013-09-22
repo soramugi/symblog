@@ -31,3 +31,8 @@ BloggerBlogBundle_comment_new:
     requirements:
         _method:  GET
         blog_id:  \d+
+BloggerBlogBundle_page_sidebar:
+    pattern:  /sidebar
+    defaults: { _controller: BloggerBlogBundle:Page:sidebar }
+    requirements:
+        _method:  GET
