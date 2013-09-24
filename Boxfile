@@ -21,6 +21,7 @@ web1:
     - zip
   php_short_open_tag: Off
   magic_quotes_gpc: Off
+  php_date_timezone: Asia/Tokyo
 
   after_build:
     - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
