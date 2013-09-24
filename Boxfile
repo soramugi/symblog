@@ -1,3 +1,6 @@
+db1:
+  type: mysql
+
 web1:
   shared_writable_dirs:
     - app/cache
@@ -14,10 +17,7 @@ web1:
     - xsl
     - apc
     - mysql
-    - posix
-    - iconv
     - tokenizer
-    - xml
     - pdo_mysql
     - zip
   php_short_open_tag: Off
@@ -30,6 +30,3 @@ web1:
 
   after_deploy:
     - "php app/console cache:clear --env=prod"
-
-db1:
-  type: mysql
