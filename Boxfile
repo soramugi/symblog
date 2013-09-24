@@ -24,7 +24,8 @@ web1:
 
   after_build:
     - "cp app/config/parameters.yml.dist app/config/parameters.yml"
-    - "composer install --no-progress"
+    - "curl -s http://getcomposer.org/installer | php"
+    - "php composer.phar install --no-progress"
 
   after_deploy:
     - "php app/console cache:clear --env=prod"
