@@ -24,9 +24,8 @@ web1:
   magic_quotes_gpc: Off
 
   after_build:
-    - "cp app/config/parameters.yml.dist app/config/parameters.yml"
-    - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi;"
-    - "php composer.phar install"
+    - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
+    - "curl -s http://getcomposer.org/installer | php -- --quiet; php composer.phar install -n"
 
   after_deploy:
     - "php app/console cache:clear --env=prod"
