@@ -19,6 +19,7 @@ web1:
     - tokenizer
     - xml
     - pdo_mysql
+    - zip
   php_short_open_tag: Off
   magic_quotes_gpc: Off
 
