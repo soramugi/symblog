@@ -5,14 +5,20 @@ symblog
 ## セットアップ
 
 ###ビルトインサーバーの使用の場合
+php5.4
 
     git clone git@github.com:soramugi/symblog.git
     cd symblog
+    cp app/config/parameters.yml.dist app/config/parameters.yml
     curl -s http://getcomposer.org/installer | php
     php composer.phar install
-    php -S localhost:8000 -t web/
+    php app/console doctrine:database:create
+    php app/console doctrine:schema:create
+    php app/console doctrine:fixtures:load --append
+    php app/console doctrine:migrations:migrate
+    php app/console server:run
 
-http://localhost:8000/config.php
+http://localhost:8000
 
 ###vagrant使用の場合
 
