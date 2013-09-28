@@ -7,8 +7,8 @@ web1:
     - app/logs
 
   document_root: web
-  default_gateway: app.php
-  index_list: [app.php]
+  default_gateway: app_dev.php
+  index_list: [app_dev.php]
 
   php_version: 5.4.14
   php_extensions:
