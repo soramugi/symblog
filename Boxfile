@@ -31,7 +31,7 @@ web1:
     #- "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
     - 'echo "parameters:
     database_driver:   pdo_mysql
-    database_host:     127.0.0.1
+    database_host:     $DB1_HOST
     database_port:     $DB1_PORT
     database_name:     $DB1_NAME
     database_user:     $DB1_USER
