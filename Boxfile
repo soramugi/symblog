@@ -31,7 +31,8 @@ web1:
   php_date_timezone: Asia/Tokyo
 
   after_build:
-    - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
+    #- "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
+    - "cp app/config/parameters.yml.dist app/config/parameters.yml"
     - "curl -s http://getcomposer.org/installer | php -- --quiet"
     - "php composer.phar install -n"
 
