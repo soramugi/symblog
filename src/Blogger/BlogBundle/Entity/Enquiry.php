@@ -64,12 +64,12 @@ class Enquiry
 
         $metadata->addPropertyConstraint(
             'email',
-            new Email(['message' => 'メールアドレスを入力してください'])
+            new Email(array('message' => 'メールアドレスを入力してください'))
         );
 
         $metadata->addPropertyConstraint('subject', new NotBlank());
-        $metadata->addPropertyConstraint('subject', new Length(['max' => 50]));
+        $metadata->addPropertyConstraint('subject', new Length(array('max' => 50)));
 
-        $metadata->addPropertyConstraint('body', new Length(['min' => 50]));
+        $metadata->addPropertyConstraint('body', new Length(array('min' => 50)));
     }
 }
