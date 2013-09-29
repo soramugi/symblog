@@ -32,7 +32,8 @@ web1:
 
   after_build:
     - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
-    - "curl -s http://getcomposer.org/installer | php -- --quiet; php composer.phar install -n"
+    - "curl -s http://getcomposer.org/installer | php -- --quiet"
+    - "php composer.phar install -n"
 
   before_deploy:
     - "app/console doctrine:schema:update --force --env=prod"
