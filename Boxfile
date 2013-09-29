@@ -48,6 +48,7 @@ web1:
     - "php composer.phar install"
 
   before_deploy:
-    - "php app/console doctrine:migrations:migrate"
+    - "php app/console doctrine:schema:update --force"
+      #- "php app/console doctrine:migrations:migrate"
   after_deploy:
     - "php app/console cache:clear --env=prod"
