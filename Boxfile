@@ -31,8 +31,24 @@ web1:
   php_date_timezone: Asia/Tokyo
 
   after_build:
-    - "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
-    #- "cp app/config/parameters.yml.dist app/config/parameters.yml"
+    #- "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
+    - 'echo "
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     $DB1_HOST
+    database_port:     $DB1_PORT
+    database_name:     $DB1_NAME
+    database_user:     $DB1_USER
+    database_password: $DB1_PASS
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+    secret:            qX8LdjSf
+      " > app/config/parameters.yml'
     - "curl -s http://getcomposer.org/installer | php -- --quiet"
     - "php composer.phar install -n"
 
