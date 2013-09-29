@@ -29,5 +29,7 @@ web1:
       #- "php app/console doctrine:schema:create"
       #- "php app/console doctrine:schema:update --force"
 
+  before_deploy:
+    - "app/console doctrine:schema:update --force --env=prod"
   after_deploy:
-    - "php app/console cache:clear --env=prod"
+    - "app/console cache:clear --env=prod"
