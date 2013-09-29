@@ -1,9 +1,3 @@
-global:
-  env:
-    - SYMFONY__DATABASE__HOST:   tunnel.pagodabox.com
-    - SYMFONY__DATABASE__PORT:   3306
-    - SYMFONY__DATABASE__SOCKET: null
-    - SYMFONY__DATABASE__NAME:   symfony
 db1:
   name: symfony
   type: mysql
@@ -18,17 +12,10 @@ web1:
   index_list: [app.php]
 
   php_version: 5.4.14
+  php_date_timezone: "Asia/Tokyo"
   php_extensions:
-    - intl
-    - mbstring
-    - xsl
-    - apc
-    - mysql
     - pdo_mysql
     - zip
-  php_short_open_tag: Off
-  magic_quotes_gpc: Off
-  php_date_timezone: Asia/Tokyo
 
   after_build:
     #- "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
