@@ -35,7 +35,7 @@ web1:
     - "curl -s http://getcomposer.org/installer | php -- --quiet"
     - "php composer.phar install -n"
 
-  before_deploy:
-    - "app/console doctrine:schema:update --force --env=prod"
-  after_deploy:
-    - "app/console cache:clear --env=prod"
+  #before_deploy:
+  #  - "app/console doctrine:schema:update --force --env=prod"
+  #after_deploy:
+  #  - "app/console cache:clear --env=prod"
