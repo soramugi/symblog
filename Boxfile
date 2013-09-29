@@ -32,8 +32,7 @@ web1:
 
   after_build:
     #- "cp app/config/parameters.yml.pagoda app/config/parameters.yml"
-    - 'echo "
-parameters:
+    - 'echo "parameters:
     database_driver:   pdo_mysql
     database_host:     $DB1_HOST
     database_port:     $DB1_PORT
@@ -47,8 +46,7 @@ parameters:
     mailer_password:   ~
 
     locale:            en
-    secret:            qX8LdjSf
-      " > app/config/parameters.yml'
+    secret:            qX8LdjSf" > app/config/parameters.yml'
     - "curl -s http://getcomposer.org/installer | php -- --quiet"
     - "php composer.phar install -n"
 
