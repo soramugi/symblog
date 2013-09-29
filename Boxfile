@@ -38,7 +38,6 @@ web1:
     - "php composer.phar install"
 
   before_deploy:
-    - "php app/console doctrine:schema:create"
     - "php app/console doctrine:schema:update --force --env=prod"
   after_deploy:
     - "php app/console cache:clear --env=prod"
