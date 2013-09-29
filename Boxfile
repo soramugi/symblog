@@ -7,9 +7,9 @@ web1:
     - app/cache
     - app/logs
 
-  document_root: web
+  document_root:   web
   default_gateway: app.php
-  index_list: [app.php]
+  index_list:      [app.php]
 
   php_version: 5.3.8
   php_extensions:
@@ -48,7 +48,7 @@ web1:
     - "php composer.phar install"
 
   before_deploy:
-    - "php app/console doctrine:schema:update --force"
+    #- "php app/console doctrine:schema:update --force"
       #- "php app/console doctrine:migrations:migrate"
   after_deploy:
     - "php app/console cache:clear --env=prod"
