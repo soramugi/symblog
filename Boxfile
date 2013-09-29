@@ -35,7 +35,7 @@ web1:
     locale:            en
     secret:            qX8LdjSf" > app/config/parameters.yml'
     - "curl -s http://getcomposer.org/installer | php -- --quiet"
-    - "php composer.phar install -n"
+    - "php composer.phar install"
 
   before_deploy:
     - "php app/console doctrine:schema:create"
